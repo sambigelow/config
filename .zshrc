@@ -78,3 +78,6 @@ alias config='/usr/bin/git --git-dir=/Users/sb84020/.cfg.git/ --work-tree=/Users
 
 # alias for opening zshrc and zshenv
 alias vimzsh="vim -o ~/.zshrc ~/.zshenv"
+
+# clear screen
+alias cl="clear"

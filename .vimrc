@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'           " NOTES BELOW:
 
 Plug 'airblade/vim-gitgutter'       " show git diff by line numbers
 
-" Frontend plugins 
+" Frontend plugins
 Plug 'pangloss/vim-javascript'      " syntax highlighting and improved indentation
 Plug 'mxw/vim-jsx'                  " syntax highlighting and indenting for JSX (depends on 'pangloss/vim-javascript')
 Plug 'mattn/emmet-vim'              " <C-y>, to expand html tags etc.
@@ -30,7 +30,7 @@ call plug#end()
 " PLUGIN CONFIGS "
 """"""""""""""""""
 
-let g:jsx_ext_required=0            " jsx works in js file
+let g:jsx_ext_required=0            " jsx works in js ile
 let g:auto_save=1                   " always enable autosave
 
 " ALE settings
@@ -51,6 +51,9 @@ if executable('ag')
   let g:ctrlp_use_Caching=0
 endif
 
+colorscheme lucius
+LuciusDarkLowContrast
+
 " use emmet for jsx
 let g:user_emmet_settings = {
   \   'javascript.jsx': {
@@ -70,7 +73,7 @@ set expandtab                       " inserts spaces when hitting tab
 
 " better folding
 set foldmethod=indent               " groups of lines with same indent form a fold
-set nofoldenable                    " makes sure files are 'normal' (not folded) on opening
+set foldlevel=99                    " makes sure files are 'normal' (not folded) on opening
 nnoremap <space> za                 " use space to fold code
 
 
@@ -80,13 +83,17 @@ set splitright
 
 set number relativenumber          " hybrid linenumber mode
 
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+
 """""""""""""""
 " AUTOCMMANDS "
 """""""""""""""
 
 if has("autocmd")
   " au BufRead * normal zR            " Open all folds when opening a new buffer
-  
+
   augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave  * set relativenumber

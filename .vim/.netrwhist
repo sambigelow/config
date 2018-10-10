@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/sb84020/projects/kroger-fulfillment-ui'
+let g:netrw_dirhist_2='/Users/sb84020/projects/kroger-fulfillment-ui/packages'
+let g:netrw_dirhist_3='/Users/sb84020/projects/kroger-fulfillment-ui/packages/kroger-fulfillment-options'
+let g:netrw_dirhist_4='/Users/sb84020/projects/kroger-fulfillment-ui/packages/kroger-fulfillment-options/src'
+let g:netrw_dirhist_5='/Users/sb84020/projects/kroger-fulfillment-ui/packages/kroger-fulfillment-options/src/components'
