@@ -8,12 +8,15 @@ Plug 'tpope/vim-surround'           " add 's' as a motion for 'surrounding' text
 Plug 'tpope/vim-commentary'         " gc<motion> to comment/uncomment a segment of code | gcc to comment/uncomment a line
 Plug 'adelarsq/vim-matchit'         " `%` symbol to move between html open and closing tags (expanding on native vim `%` functionality)
 Plug 'jiangmiao/auto-pairs'         " autoclosing braces and adding carriage returns
-Plug 'vim-scripts/vim-auto-save'    " autosave files at interval
+Plug 'itchyny/lightline.vim'        " tabline/statusline
+" Plug 'vim-scripts/vim-auto-save'  " autosave files at interval
+Plug 'vim-scripts/Tabmerge'         " Turn tabs into windows - usage: Tabmerge [tab number] [top|bottom|left|right]
 
 " Help with git stuff
 Plug 'tpope/vim-fugitive'           " NOTES BELOW:
 " `:Gedit :Gsplit :Gvsplit :Gtabedit` to edit and stage changes
 " `:Gblame` brings up interactive split with `git blame` output
+" `:Gdiff` shows difference - `:diffoff` to close diff
 " Does a whole lot more, worth reading at a later time
 " Screencasts available at https://github.com/tpope/vim-fugitive
 
@@ -54,6 +57,12 @@ endif
 colorscheme lucius
 LuciusDarkLowContrast
 
+" status line color scheme
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
+set laststatus=2
+
 " use emmet for jsx
 let g:user_emmet_settings = {
   \   'javascript.jsx': {
@@ -86,6 +95,8 @@ set number relativenumber          " hybrid linenumber mode
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" ignore case when searching for word
+set ignorecase
 
 """""""""""""""
 " AUTOCMMANDS "
@@ -110,6 +121,7 @@ endif
 """""""""""""""
 " KEYMAPPINGS "
 """""""""""""""
+
 
 inoremap jk <Esc>
 
